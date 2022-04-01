@@ -19,7 +19,7 @@ pipeline {
                     }
                     echo "${branchName}"
                     
-                    repos.each {
+                    repos.each { repo ->
                         println it
                     }
                 }
