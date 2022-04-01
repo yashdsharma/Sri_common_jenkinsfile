@@ -8,7 +8,7 @@ pipeline {
             steps {
                 echo "Checkout"
                 branchName = "${params.target}"
-                echo "${beanchName}"
+                echo "${branchName}"
                 }
         }
         stage('deploy'){
