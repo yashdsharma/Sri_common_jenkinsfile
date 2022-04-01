@@ -19,6 +19,9 @@ pipeline {
                 }
                 echo "${branchName}"
                 }
+                repos.each {
+                    println it
+                }
             }
         }
         stage('deploy'){
