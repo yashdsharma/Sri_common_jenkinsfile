@@ -9,6 +9,13 @@ pipeline {
                 script{
                 echo "Checkout"
                 branchName = "${params.target}"
+                if (branchName.startsWith('ma')){
+                    repos = ['main', 'mains']
+                    echo "Entering all main repos"
+                }
+                else if (branchName.startsWith('ya')){
+                    echo "Entering yash branch"
+                }
                 echo "${branchName}"
                 }
             }
