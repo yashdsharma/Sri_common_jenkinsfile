@@ -11,8 +11,11 @@ pipeline {
                     echo "Checkout Stage"
                     branchName = "${params.target}"
                     if (branchName.startsWith('ma')){
-                        repos = ['main', 'mains']
+                        repos = ['main', 'mains', 'mainlands']
                         echo "Entering all main repos"
+                        echo "Printing repos(2)"
+                        rr = repos.get(2)
+                        echo "$rr"
                     }
                     else if (branchName.startsWith('ya')){
                         echo "Entering yash branch"
