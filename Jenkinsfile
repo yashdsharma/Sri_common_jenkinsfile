@@ -30,7 +30,7 @@ pipeline {
                         echo "Inside cd-pipeline"
                     	checkout([
                         	$class: 'GitSCM',
-                      		branches: [[name: '*/main']],
+                      		branches: [[name: '*/yash']],
                       		userRemoteConfigs: [[
                             	url: 'https://github.com/yashdsharma/Sri_common_jenkinsfile.git'
                             ]]
