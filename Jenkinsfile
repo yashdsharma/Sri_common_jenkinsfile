@@ -47,7 +47,8 @@ pipeline {
             steps {
                 script{
             echo "Deployment Stage"
-                    assert response ==~ /.*200,.*/ : response
+                    sh C:\Users\ysharma\Desktop\script.sh
+                   // assert response ==~ /.*200,.*/ : response
             }
             }
         }
