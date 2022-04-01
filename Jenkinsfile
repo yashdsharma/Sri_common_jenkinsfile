@@ -8,20 +8,20 @@ pipeline {
         stage('checkout') {
             steps {
                 script{
-                echo "Checkout Stage"
-                branchName = "${params.target}"
-                if (branchName.startsWith('ma')){
-                    repos = ['main', 'mains']
-                    echo "Entering all main repos"
-                }
-                else if (branchName.startsWith('ya')){
-                    echo "Entering yash branch"
-                }
-                echo "${branchName}"
-                }
-                repos.each {
-                    println it
-                }
+                    echo "Checkout Stage"
+                    branchName = "${params.target}"
+                    if (branchName.startsWith('ma')){
+                        repos = ['main', 'mains']
+                        echo "Entering all main repos"
+                    }
+                    else if (branchName.startsWith('ya')){
+                        echo "Entering yash branch"
+                    }
+                    echo "${branchName}"
+                    }
+                    repos.each {
+                        println it
+                    }
             }
         }
         stage('deploy'){
