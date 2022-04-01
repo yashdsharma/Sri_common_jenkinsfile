@@ -18,10 +18,11 @@ pipeline {
                         echo "Entering yash branch"
                     }
                     echo "${branchName}"
-                    }
+                    
                     repos.each {
                         println it
                     }
+                }
             }
         }
         stage('deploy'){
