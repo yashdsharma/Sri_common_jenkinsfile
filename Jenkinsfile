@@ -10,7 +10,7 @@ pipeline {
                 script {
                 echo "Checkout"
                 branchName = "${params.target}"
-                echo "${beanchName}"
+                echo "${branchName}"
                         }
                 }
         }
