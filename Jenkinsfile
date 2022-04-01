@@ -2,12 +2,13 @@ pipeline {
     agent any
     parameters {
         string(name: 'target', defaultValue: "$BRANCH_NAME", description: 'Target deployment env.' )
+        string(name: 'snapshotSkipFlag', defaultValue: '', description: 'Skip snapshot')
     }
     stages {
         stage('checkout') {
             steps {
                 script{
-                echo "Checkout"
+                echo "Checkout Stage"
                 branchName = "${params.target}"
                 if (branchName.startsWith('ma')){
                     repos = ['main', 'mains']
@@ -23,7 +24,7 @@ pipeline {
         stage('deploy'){
             steps {
                 script{
-            echo "This is deploy"
+            echo "Deployment Stage"
             }
             }
         }
