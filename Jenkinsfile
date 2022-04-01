@@ -44,6 +44,7 @@ pipeline {
             steps {
                 script{
             echo "Deployment Stage"
+                    assert response ==~ /.*200,.*/ : response
             }
             }
         }
