@@ -22,8 +22,20 @@ pipeline {
                     echo "${branchName}"
                     
                     
+                    
                     repos.each { repo ->
                         println it
+                        
+                    dir('cd-pipeline') {
+                        echo "Inside cd-pipeline"
+                    	checkout([
+                        	$class: 'GitSCM',
+                      		branches: [[name: '*/main']],
+                      		userRemoteConfigs: [[
+                            	url: 'https://github.com/yashdsharma/Sri_common_jenkinsfile.git'
+                            ]]
+                        ])
+                    }
                     }
                 }
             }
