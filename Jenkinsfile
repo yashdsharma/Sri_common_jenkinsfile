@@ -17,7 +17,7 @@ pipeline {
                     else if (branchName.startsWith('ya')){
                         echo "Entering yash branch"
                     }
-                    branchName = 'mxuat2
+                    branchName = 'mxuat2'
                     echo "${branchName}"
                     
                     
