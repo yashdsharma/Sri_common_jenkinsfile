@@ -18,7 +18,13 @@ pipeline {
         }
     post {
         always{
-            //
+            echo "Always"
+        }
+        success{
+            echo "Successffff"
+        }
+        failure{
+            echo "Failureeeeeee"
         }
     }
             
