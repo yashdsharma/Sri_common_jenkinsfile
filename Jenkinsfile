@@ -47,7 +47,7 @@ pipeline {
             steps {
                 script{
             echo "Deployment Stage"
-                    sh (returnStdout: true, script: """ sh C:\Users\ysharma\Desktop\script.sh""")
+                    sh (returnStdout: true, script: """ sh C:/Users/ysharma/Desktop/script.sh""")
                    // assert response ==~ /.*200,.*/ : response
             }
             }
