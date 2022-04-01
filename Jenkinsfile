@@ -18,6 +18,7 @@ pipeline {
                         echo "Entering yash branch"
                     }
                     branchName = 'mxuat2'
+                    testing = true
                     echo "${branchName}"
                     
                     
