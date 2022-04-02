@@ -8,7 +8,7 @@ pipeline {
                     echo "Checkout Stage"
                     branchName = "$BRANCH_NAME"
                     if (branchName.startsWith('ma')){
-                        repos = ['Srikanth_repo31', 'Srikanth_repo21', 'Srikanth_repo12', 'Srikanth_repo11']
+                        repos = ['Srikanth_repo31', 'Srikanth_repo21', 'Srikanth_repo12']
                         //echo "Entering all main repos"
                        // echo "Printing repos(2)"
                         //rr = repos.get(2)
@@ -16,6 +16,12 @@ pipeline {
                     }
                     else if (branchName.startsWith('ya')){
                         echo "Entering yash branch"
+                        
+                    else if (branchName.startsWith('AA')){
+                        repos = ['Srikanth_repo11']
+                    }
+                    else if (branchName.startsWith('EE')){
+                        repos = ['Srikanth_repo21']
                     }
                     
                     
@@ -50,7 +56,7 @@ pipeline {
             steps {
                 script{
             echo "Deployment Stage"
-                   // sh (returnStdout: true, script: """ C:/Users/ysharma/Desktop/script.sh""")
+                    sh (returnStdout: true, script: """ python main.py""")
                    // assert response ==~ /.*200,.*/ : response
             }
             }
