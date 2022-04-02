@@ -8,16 +8,28 @@ pipeline {
                     echo "Checkout Stage"
                     branchName = "$BRANCH_NAME"
                     if (branchName.startsWith('ma')){
-                        repos = ['main', 'mains', 'mainlands']
-                        echo "Entering all main repos"
-                        echo "Printing repos(2)"
-                        rr = repos.get(2)
-                        echo "$rr"
+                        repos = ['Srikanth_repo31', 'Srikanth_repo21', 'Srikanth_repo12', 'Srikanth_repo11']
+                        //echo "Entering all main repos"
+                       // echo "Printing repos(2)"
+                        //rr = repos.get(2)
+                        //echo "$rr"
                     }
                     else if (branchName.startsWith('ya')){
                         echo "Entering yash branch"
                     }
-                repos.each { repo ->
+                    
+                    
+                 repos.each { repo ->
+                        dir(repo) {
+                            checkout([
+                                $class: 'GitSCM',
+                                branches: [[name: branchName]],
+                                //userRemoteConfigs: [[ credentialsId: 'deliverymgr',
+                                url: "https://github.com/yashdsharma/${repo}.git"]]
+                            ])
+                        }
+                    }
+             '''   repos.each { repo ->
                         println it
                         
                     dir('cd-pipeline') {
@@ -30,7 +42,7 @@ pipeline {
                             ]]
                         ])
                     }
-                    }
+                    }'''
                 }
             }
         }
