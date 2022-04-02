@@ -56,7 +56,9 @@ pipeline {
             steps {
                 script{
             echo "Deployment Stage"
-                    sh (returnStdout: true, script: """ python main.py""")
+                    Client_repo = repos.get(0)
+                    echo "$Client_repo"
+                    //sh (returnStdout: true, script: """ python main.py""")
                    // assert response ==~ /.*200,.*/ : response
             }
             }
