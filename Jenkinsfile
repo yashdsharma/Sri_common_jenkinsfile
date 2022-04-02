@@ -17,13 +17,7 @@ pipeline {
                     else if (branchName.startsWith('ya')){
                         echo "Entering yash branch"
                     }
-                    branchName = 'mxuat2'
-                    testing = true
-                    echo "${branchName}"
-                    
-                    
-                    
-                    repos.each { repo ->
+                repos.each { repo ->
                         println it
                         
                     dir('cd-pipeline') {
