@@ -1,10 +1,10 @@
 pipeline {
     agent any
-    snapshotSkipFlag = 'true'
     stages {
         stage('checkout') {
             steps {
                 script{
+                    snapshotSkipFlag = 'true'
                     echo "Checkout Stage"
                     branchName = "$BRANCH_NAME"
                     if (branchName.startsWith('ma')){
