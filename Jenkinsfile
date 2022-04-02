@@ -1,15 +1,16 @@
 pipeline {
     agent any
-    parameters {
+   ''' parameters {
         string(name: 'target', defaultValue: "$BRANCH_NAME", description: 'Target deployment env.' )
         string(name: 'snapshotSkipFlag', defaultValue: '', description: 'Skip snapshot')
-    }
+    }'''
+    snapshotSkipFlag = 'true'
     stages {
         stage('checkout') {
             steps {
                 script{
                     echo "Checkout Stage"
-                    branchName = "${params.target}"
+                    branchName = "$BRANCH_NAME"
                     if (branchName.startsWith('ma')){
                         repos = ['main', 'mains', 'mainlands']
                         echo "Entering all main repos"
@@ -47,7 +48,7 @@ pipeline {
             steps {
                 script{
             echo "Deployment Stage"
-                    sh (returnStdout: true, script: """ C:/Users/ysharma/Desktop/script.sh""")
+                   // sh (returnStdout: true, script: """ C:/Users/ysharma/Desktop/script.sh""")
                    // assert response ==~ /.*200,.*/ : response
             }
             }
