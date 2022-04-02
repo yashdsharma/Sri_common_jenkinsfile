@@ -16,7 +16,7 @@ pipeline {
                     }
                     else if (branchName.startsWith('ya')){
                         echo "Entering yash branch"
-                        
+                    }
                     else if (branchName.startsWith('AA')){
                         repos = ['Srikanth_repo11']
                     }
