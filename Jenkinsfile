@@ -24,7 +24,7 @@ pipeline {
                             checkout([
                                 $class: 'GitSCM',
                                 branches: [[name: branchName]],
-                                //userRemoteConfigs: [[ credentialsId: 'deliverymgr',
+                                userRemoteConfigs: [[ credentialsId: '',
                                 url: "https://github.com/yashdsharma/${repo}.git"]]
                             ])
                         }
